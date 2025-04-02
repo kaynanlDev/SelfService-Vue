@@ -69,6 +69,18 @@ const selfService = {
         return{
             products: window.products
         }
+    },
+    methods: {
+        calcTotal: () =>{
+            let total = 0
+            products.forEach((product) =>{
+                if(product.active){
+                    total = total + product.price * product.quantity
+                }    
+            })
+
+            return total.toFixed(2);
+        }
     }
 }
 
